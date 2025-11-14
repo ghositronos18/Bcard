@@ -62,6 +62,7 @@ function buildVCard() {
     email: form.email.value,
     website: form.website.value,
     address: form.address.value,
+    note: form.notes.value,
     whatsappLink
   };
 }
@@ -235,3 +236,4 @@ resetBtn.onclick = () => {
   downloadVcfBtn.disabled = true;
   downloadPngBtn.disabled = true;
 }
+
