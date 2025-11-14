@@ -30,13 +30,13 @@ function escapeVcard(value = '') {
     .replace(/;/g, '\\;');
 }
 
-
 function escapeVcardNoSemi(value = '') {
   return String(value)
     .replace(/\r?\n/g, '\\n')
-    .replace(/,/g, '\\,');
+    .replace(/,/g, '\\,');   // only escape commas and newlines
+}
 
-// Build vCard and WhatsApp link
+//  Build vCard and WhatsApp link
 function buildVCard() {
   const fn = `${form.firstName.value.trim()} ${form.lastName.value.trim()}`.trim();
   const n = `${form.lastName.value.trim()};${form.firstName.value.trim()}`;
@@ -68,7 +68,6 @@ function buildVCard() {
     email: form.email.value,
     website: form.website.value,
     address: form.address.value,
-    note: form.notes.value,
     whatsappLink
   };
 }
@@ -242,8 +241,3 @@ resetBtn.onclick = () => {
   downloadVcfBtn.disabled = true;
   downloadPngBtn.disabled = true;
 }
-
-
-
-
-
