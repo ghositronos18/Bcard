@@ -32,8 +32,8 @@ function escapeVcard(value = '') {
 
 // ✅ Build vCard and WhatsApp link
 function buildVCard() {
-  const fn = `${form.firstName.value.trim()} ${form.lastName.value.trim()}`.trim();
-  const n = `${form.lastName.value.trim()};${form.firstName.value.trim()}`;
+  const fn = `${form.firstName.value.trim()} ${form.sureName.value.trim()}`.trim();
+  const n = `${form.sureName.value.trim()};${form.firstName.value.trim()}`;
   const phone = form.phone.value.trim();
   const cleanPhone = phone.replace(/\D/g, '');
   const whatsappLink = `https://wa.me/${cleanPhone}`;
@@ -236,4 +236,5 @@ resetBtn.onclick = () => {
   downloadVcfBtn.disabled = true;
   downloadPngBtn.disabled = true;
 }
+
 
