@@ -32,7 +32,7 @@ function escapeVcard(value = '') {
 
 // ✅ Build vCard and WhatsApp link
 function buildVCard() {
-  const fn = `${form.lastName.value.trim()} ${form.firstName.value.trim()}`.trim();
+  const fn = `${form.firstName.value.trim()} ${form.lastName.value.trim()}`.trim();
   const n = `${form.lastName.value.trim()};${form.firstName.value.trim()}`;
   const phone = form.phone.value.trim();
   const cleanPhone = phone.replace(/\D/g, '');
@@ -236,5 +236,6 @@ resetBtn.onclick = () => {
   downloadVcfBtn.disabled = true;
   downloadPngBtn.disabled = true;
 }
+
 
 
