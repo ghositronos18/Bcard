@@ -33,7 +33,7 @@ function escapeVcard(value = '') {
 function escapeVcardNoSemi(value = '') {
   return String(value)
     .replace(/\r?\n/g, '\\n')
-    .replace(/,/g, '\\,');   // only escape commas and newlines
+    .replace(/,/g, '\\,');   
 }
 
 //  Build vCard and WhatsApp link
