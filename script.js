@@ -72,7 +72,7 @@ function buildVCard() {
   };
 }
 
-// === Gradient drawing ===
+//  Gradient drawing 
 function drawGradientQR(color1, color2) {
   const ctx = qrCanvas.getContext('2d');
   const imgData = ctx.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
@@ -100,7 +100,7 @@ function drawGradientQR(color1, color2) {
   ctx.putImageData(imgData, 0, 0);
 }
 
-// === QR with logo and round mask ===
+//  QR with logo 
 function drawQRWithLogo(color1, color2) {
   const ctx = qrCanvas.getContext('2d');
   drawGradientQR(color1, color2);
@@ -189,7 +189,7 @@ function updatePreviewAndQR(data) {
   downloadPngBtn.disabled = false;
 }
 
-// === Logo upload ===
+// Logo upload 
 logoUpload.addEventListener('change', e => {
   const file = e.target.files[0];
   if (!file) return;
@@ -201,14 +201,14 @@ logoUpload.addEventListener('change', e => {
   reader.readAsDataURL(file);
 });
 
-// === Generate ===
+// Generate 
 generateBtn.onclick = () => {
   const cardData = buildVCard();
   latestVCard = cardData.vcard;
   updatePreviewAndQR(cardData);
 };
 
-// === Download VCF ===
+// Download VCF 
 downloadVcfBtn.onclick = () => {
   if (!latestVCard) return alert('Generate first!');
   const blob = new Blob([latestVCard], { type: 'text/vcard' });
@@ -218,7 +218,7 @@ downloadVcfBtn.onclick = () => {
   a.click();
 };
 
-// === Download PNG ===
+// Download PNG 
 downloadPngBtn.onclick = () => {
   if (!latestVCard) return alert('Generate first!');
   qrCanvas.toBlob(blob => {
@@ -229,7 +229,7 @@ downloadPngBtn.onclick = () => {
   });
 };
 
-// === Reset ===
+//  Reset
 resetBtn.onclick = () => {
   form.reset();
   qr.value = '';
@@ -241,3 +241,4 @@ resetBtn.onclick = () => {
   downloadVcfBtn.disabled = true;
   downloadPngBtn.disabled = true;
 }
+
